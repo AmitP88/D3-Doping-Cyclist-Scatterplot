@@ -24,5 +24,6 @@ h1 {
 .canvas {
     width: 90vw;
     height: 100vh;
-    margin-left: 3%;
+    margin: 0 auto;
+    margin-left: 20%;
 }
