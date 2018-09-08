@@ -42,7 +42,22 @@ const getData = () => {
            .attr("r", 5)
            .attr("class", "dot")
            .attr("data-xvalue", (d) => (d.Year))
-           .attr("data-yvalue", (d) => (parseTime(d.Time)));
+           .attr("data-yvalue", (d) => (parseTime(d.Time)))
+           .on("mouseover", (d) => {		
+            div.transition()		
+               .duration(200)		
+               .style("opacity", .9);
+            
+            div.html(d.Time + "<br/>" + d.Year)	
+               .style("left", (d3.event.pageX) + 10 + "px")		
+               .style("top", (d3.event.pageY - 28) + "px")
+               .attr("data-date", d[0]);
+            })					
+            .on("mouseout", function(d) {		
+                div.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+            });
 
         /* Added x and y axes to the left and bottom of the svg canvas */
         const xAxis = d3.axisBottom(xScale);
@@ -56,6 +71,20 @@ const getData = () => {
            .attr("id", "y-axis")
            .attr("transform", "translate(" + 35 + ",0)")
            .call(yAxis);
+
+        /* Legend */
+        svg.append("rect")
+           .attr("id", "legend")
+           .attr("class", "legend")
+           .attr("x", 55 + "%")
+           .attr("y", 40 + "%");
+        svg.append("text")
+           .text("Legend")
+           .attr("x", 64 + "%")
+           .attr("y", 45 + "%")
+           .attr("class", "legend-title");
+
+
 
     })
 }

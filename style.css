@@ -27,3 +27,14 @@ h1 {
     margin: 0 auto;
     margin-left: 20%;
 }
+
+.legend {
+    width: 300px;
+    height: 200px;
+    fill: bisque;
+}
+
+.legend-title {
+    font-weight: bold;
+    font-size: 20px;
+}
