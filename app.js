@@ -42,7 +42,7 @@ const getData = () => {
            .attr("r", 5)
            .attr("class", "dot")
            .attr("data-xvalue", (d) => (d.Year))
-           .attr("data-yvalue", (d) => (d.Time));
+           .attr("data-yvalue", (d) => (parseTime(d.Time)));
 
         /* Added x and y axes to the left and bottom of the svg canvas */
         const xAxis = d3.axisBottom(xScale);
