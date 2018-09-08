@@ -4,7 +4,7 @@ const getData = () => {
         console.log(dataset);
 
         const w = 700;
-        const h = 400;
+        const h = 600;
 
         /* Padding between SVG canvas boundary and the plot */
         const padding = 40;
@@ -39,7 +39,10 @@ const getData = () => {
            .append("circle")
            .attr("cx", (d) => xScale(Date.parse(d.Year)))
            .attr("cy", (d) => yScale(parseTime(d.Time)))
-           .attr("r", 5);
+           .attr("r", 5)
+           .attr("class", "dot")
+           .attr("data-xvalue", (d) => (d.Year))
+           .attr("data-yvalue", (d) => (d.Time));
 
         /* Added x and y axes to the left and bottom of the svg canvas */
         const xAxis = d3.axisBottom(xScale);
