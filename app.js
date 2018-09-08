@@ -27,6 +27,13 @@ const getData = () => {
                          .domain([y_min, y_max])
                          .range([h - padding, padding]);
 
+        // Define the div for the tooltip
+        var div = d3.select(".container")
+                    .append("div")	
+                    .attr("class", "tooltip")
+                    .attr("id", "tooltip")
+                    .style("opacity", 0);
+
         /* Add an SVG Canvas */
         const svg = d3.select(".container")
                       .append("svg")
@@ -51,7 +58,7 @@ const getData = () => {
             div.html(d.Time + "<br/>" + d.Year)	
                .style("left", (d3.event.pageX) + 10 + "px")		
                .style("top", (d3.event.pageY - 28) + "px")
-               .attr("data-date", d[0]);
+               .attr("data-year", d.Year);
             })					
             .on("mouseout", function(d) {		
                 div.transition()		
