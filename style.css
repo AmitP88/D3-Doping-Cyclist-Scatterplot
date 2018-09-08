@@ -1,0 +1,28 @@
+body {
+    background-color: #778899;
+}
+
+.container {
+    height: 100vh;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 2%;
+    background-color: whitesmoke;
+    /* box-shadow */
+    -webkit-box-shadow: 10px 10px 11px -4px rgba(0,0,0,0.68);
+    -moz-box-shadow: 10px 10px 11px -4px rgba(0,0,0,0.68);
+    box-shadow: 10px 10px 11px -4px rgba(0,0,0,0.68);
+}
+
+h1 {
+    text-align: center;
+    padding-top: 3%;
+    font-family: monospace;
+    font-size: -webkit-xxx-large;
+}
+
+.canvas {
+    width: 90vw;
+    height: 100vh;
+    margin-left: 3%;
+}
